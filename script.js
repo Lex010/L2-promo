@@ -41,3 +41,24 @@ function copyText() {
     document.execCommand("copy");
     document.body.removeChild(textarea);
   }
+  // сообщение о скопированом тексте/////////////////////////////////////////////////////////
+  const firstCod = document.getElementById('copyButton');
+  const secondCod = document.getElementById('copyButton2');
+  const thirdCod = document.getElementById('copyButton3');
+
+  const arrCod = [firstCod, secondCod, thirdCod];
+
+  arrCod.forEach((a) => {
+    a.addEventListener('click', () => {
+      // При наведении курсора показываем подсказку
+      const tooltipText = a.querySelector('.copy-message');
+      tooltipText.style.visibility = 'visible';
+    });
+  
+    a.addEventListener('mouseout', () => {
+      // Когда курсор уходит, скрываем подсказку
+      const tooltipText = a.querySelector('.copy-message');
+      tooltipText.style.visibility = 'hidden';
+    });
+  });
+  // /////////////////////////////////////////////////////
