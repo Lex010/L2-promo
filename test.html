@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка сообщения в Telegram</title>
+</head>
+<body>
+    <h1>Отправить сообщение разработчику сайта</h1>
+    <h3>Для получения ответа оставте контакт в сообщении</h3>
+    <form id="telegramForm">
+        <label for="message">Введите текст сообщения:</label><br>
+        <input type="text" id="message" name="message"><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        document.getElementById("telegramForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const message = document.getElementById("message").value;
+            const token = "6491166792:AAEZE8kDx59Zxy15gL7UpSwmv_7kD-X9N30";
+            const chatId = "1858958803"; // Укажите идентификатор чата, куда хотите отправлять сообщения (можно ваш собственный или чей-то еще)
+            //1649812581 мой
+            //1823357130 Мария
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert("Сообщение успешно отправлено в Telegram!");
+                    } else {
+                        alert("Ошибка при отправке сообщения в Telegram!");
+                    }
+                })
+                .catch(error => {
+                    console.error("Ошибка при отправке запроса:", error);
+                    alert("Ошибка при отправке сообщения в Telegram!");
+                });
+        });
+    </script>
+</body>
+</html>
