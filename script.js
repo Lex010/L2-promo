@@ -41,12 +41,22 @@ function copyText() {
     document.execCommand("copy");
     document.body.removeChild(textarea);
   }
+  function copyText4() {
+    const button = document.getElementById("copyButton4");
+    const textarea = document.createElement("textarea");
+    textarea.value = button.innerText;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
   // сообщение о скопированом тексте/////////////////////////////////////////////////////////
   const firstCod = document.getElementById('copyButton');
   const secondCod = document.getElementById('copyButton2');
   const thirdCod = document.getElementById('copyButton3');
+  const forthCod = document.getElementById('copyButton4');
 
-  const arrCod = [firstCod, secondCod, thirdCod];
+  const arrCod = [firstCod, secondCod, thirdCod, forthCod];
 
   arrCod.forEach((a) => {
     a.addEventListener('click', () => {
