@@ -56,8 +56,8 @@ function copyText() {
   const thirdCod = document.getElementById('copyButton3');
   const forthCod = document.getElementById('copyButton4');
 
-  // const arrCod = [firstCod, secondCod, thirdCod, forthCod]; Для четвертого кода
-  const arrCod = [firstCod];
+  const arrCod = [firstCod, secondCod, thirdCod, forthCod];
+  // const arrCod = [firstCod];
 
   arrCod.forEach((a) => {
     a.addEventListener('click', () => {
