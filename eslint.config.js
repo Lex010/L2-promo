@@ -17,11 +17,10 @@ export default [
     },
 
     rules: {
+      ...js.configs.recommended.rules, // объединяем правила
       'no-unused-vars': 'warn',
       'no-console': 'off',
+      semi: ['error', 'always'],
     },
-
-    // включаем правила recommended через spread. для игнора old-version/ записано снизу
-    ...js.configs.recommended,
   },
 ];
