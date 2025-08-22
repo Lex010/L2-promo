@@ -137,7 +137,7 @@ button:active {
 }
 
 .info__headline::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -18px;
   top: 4px;

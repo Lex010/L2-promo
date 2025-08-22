@@ -1,6 +1,6 @@
 // Функция для обновления даты последнего изменения
 function updateLastUpdatedDate() {
-  let lastUpdatedElement = document.getElementById("site-update");
+  let lastUpdatedElement = document.getElementById('site-update');
   let lastUpdatedDate = new Date(document.lastModified);
   lastUpdatedElement.textContent = lastUpdatedDate.toLocaleString();
 }
